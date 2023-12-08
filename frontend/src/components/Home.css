@@ -1,0 +1,99 @@
+/* Home.css */
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #4CAF50;
+  padding: 25px;
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.button {
+  background-color: #008CBA;
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #005F6B;
+}
+
+.body {
+  margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.body th, .body td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.body th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.body tr:nth-child(even) {
+  background-color: #f2f2f2;
+} 
+
+.body tr:hover {
+  background-color: #ddd;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5)
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.modal button { 
+  width: 90px;
+  height: 30px;
+  cursor: pointer;
+  border: none;
+}
+
+.modal #btn-sim {
+  background-color: #4CAF50;
+}
+
+.modal #btn-cancel {
+  background-color: red;
+}
+

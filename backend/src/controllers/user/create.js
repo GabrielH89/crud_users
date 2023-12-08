@@ -3,6 +3,10 @@ const userModel = require('../../models/user');
 const createUser = async (req, res) => {
     try{
         const {nome, email, telefone} = req.body;
+        if(!nome || !email){
+            return res.status(400).json({msg: "Campos nome e email não foram definidos"});
+        }
+
         if(nome === null || email === null){
             return res.status(400).json({msg: "Preencha todos os campos"});
         }
