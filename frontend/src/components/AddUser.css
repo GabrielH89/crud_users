@@ -1,0 +1,53 @@
+/** {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+*/
+
+/* AddUser.css */
+
+.form {
+    max-width: 400px;
+    margin: 0 auto;
+    border: 2px solid black;
+    margin-top: 100px;
+    padding: 10px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 8px;
+  }
+  
+  input {
+    padding: 8px;
+    margin-bottom: 16px;
+  }
+  
+  button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Estilo para tornar o botão mais atraente ao passar o mouse */
+  button:hover {
+    background-color: #45a049;
+  }
+  
+
+
+

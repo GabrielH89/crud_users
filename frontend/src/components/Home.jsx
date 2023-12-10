@@ -89,7 +89,7 @@ function Home() {
                         <tr key={user.id}>
                             <td>{user.nome}</td>
                             <td>{user.email}</td>
-                            <td>{user.telefone}</td>
+                            <td>{user.contato}</td>
                             <td>
                                 <button>Editar</button>
                                 <button onClick={() => showDeleteConfirmation(user.id)}>

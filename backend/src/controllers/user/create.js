@@ -2,7 +2,7 @@ const userModel = require('../../models/user');
 
 const createUser = async (req, res) => {
     try{
-        const {nome, email, telefone} = req.body;
+        const {nome, email, contato} = req.body;
         if(!nome || !email){
             return res.status(400).json({msg: "Campos nome e email não foram definidos"});
         }
@@ -16,7 +16,7 @@ const createUser = async (req, res) => {
             return res.status(409).json({msg: "Já existe um usuário com este e-mail, insira outro"});
         }
 
-        const newUser = await userModel.create({nome, email, telefone});
+        const newUser = await userModel.create({nome, email, contato});
 
         return res.status(201).json({ msg: `Usuário(a) ${nome} criado(a) com sucesso` });
     }catch(err){
