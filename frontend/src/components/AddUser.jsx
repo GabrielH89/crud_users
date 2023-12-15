@@ -37,6 +37,9 @@ function AddUser() {
           alert("Preencha todos os campos");
       }
     }catch(err){
+      if(err.response && err.response.status === 409){
+        alert("Este e-mail já existe!");
+      }
       console.log("Houve o seguinte erro: " + err);
     }
   }

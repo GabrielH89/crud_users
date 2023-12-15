@@ -90,11 +90,18 @@ function Home() {
                             <td>{user.nome}</td>
                             <td>{user.email}</td>
                             <td>{user.contato}</td>
-                            <td>
-                                <button>Editar</button>
-                                <button onClick={() => showDeleteConfirmation(user.id)}>
-                                    Excluir
+                            <td className='td-actions'>
+                                <div className='buttonOptions'>
+                                <Link to={`/updateUser/${user.id}`}><button  
+                                className='btn-editar'>
+                                    Editar
+                                    </button>
+                                </Link>
+                                <button onClick={() => showDeleteConfirmation(user.id)} 
+                                className='btn-excluir'>
+                                    Excluir 
                                 </button>
+                                </div>
                             </td>
                         </tr>
                     ))}

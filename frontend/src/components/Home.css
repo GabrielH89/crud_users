@@ -7,25 +7,18 @@ body {
 }
 
 .header {
-  background-color: #4CAF50;
+  background-color: black;
   padding: 25px;
   text-align: center;
-}
-
-.button-container {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
+  justify-content: space-around;
 }
 
-.button {
-  background-color: #008CBA;
-  color: white;
-  padding: 10px;
-  margin: 5px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.header button {
+  background-color: green;
+  width: 180px;
+  height: 50px;
+  font-size: 1rem;
 }
 
 .button:hover {
@@ -45,7 +38,7 @@ body {
 }
 
 .body th {
-  background-color: #4CAF50;
+  background-color: black;
   color: white;
 }
 
@@ -84,7 +77,7 @@ body {
 
 .modal button { 
   width: 90px;
-  height: 30px;
+  height: 40px;
   cursor: pointer;
   border: none;
 }
@@ -95,5 +88,30 @@ body {
 
 .modal #btn-cancel {
   background-color: red;
+}
+
+.td-actions {
+  width: 200px;
+}
+
+.buttonOptions {
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn-editar {
+  background-color: blue;
+}
+
+.btn-editar:hover {
+  background-color: #00008B;
+}
+
+.btn-excluir {
+  background-color: red;
+}
+
+.btn-excluir:hover {
+  background-color: #8B0000;
 }
 

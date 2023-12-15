@@ -2,6 +2,7 @@ import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './components/Home';
 import AddUser from './components/AddUser';
+import UpdateUser from './components/UpdateUser';
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/addUser' element={<AddUser/>}/>
+          <Route path='/updateUser/:id' element={<UpdateUser/>}></Route>
         </Routes>
       </BrowserRouter>
     </>
