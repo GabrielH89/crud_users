@@ -26,7 +26,9 @@ Tenha o npm e o node Js instalados na sua máquina
 #### No diretório backend
 1. Estando no diretório backend, execute o comando $ npm install.
 
-2. Crie um arquivo .env e insira as variáveis presentes no arquivo .env.example na raíz do diretório backend. Obs: é necessário criar um banco de dados no mysql, na sua máquina local.
+2. Crie um arquivo .env e insira as variáveis presentes no arquivo .env.example na raíz do diretório backend. Obs: você deve ter o mysql instalado na máquina local
+
+3. Para cria o banco de dado execute o seguinte comando: $mysql -u seu_usuario_mysql -p -e "CREATE DATABASE IF NOT EXISTS nomedobanco". Após isso, é só inserir o comando: $mysql -u seu_usuario_mysql -p nome_do_banco -e "source ./src/database/connectionDB/create_table.sql", para criar a tabela de usuarios no banco de dados.
 
 3. Execute o comando $ npm run dev 
 
