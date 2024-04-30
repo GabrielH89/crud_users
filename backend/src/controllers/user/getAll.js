@@ -8,7 +8,7 @@ const getAllUser = async (req, res) => {
             return res.status(404).json({msg: "Não há usuários"});
         }
 
-        return res.status(200).json({msg: users});
+        return res.status(200).json(users);
     }catch(err){
         console.log("Error: " + err)
         return res.status(500).json({msg: "Error " + err});
