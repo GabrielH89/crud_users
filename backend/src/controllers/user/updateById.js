@@ -1,7 +1,6 @@
 const { Op } = require('sequelize');
 const userModel = require('../../models/user');
 
-
 const isValidEmail = (email) => {
     const regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z.-]+\.[a-zA-Z]{2,4}$/;
     return regexEmail.test(email);
