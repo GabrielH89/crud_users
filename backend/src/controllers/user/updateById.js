@@ -1,14 +1,22 @@
 const { Op } = require('sequelize');
 const userModel = require('../../models/user');
 
+
+const isValidEmail = (email) => {
+    const regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z.-]+\.[a-zA-Z]{2,4}$/;
+    return regexEmail.test(email);
+}
+
+const isValidContato = (contato) => {
+    const regexContato =  /^\d{2}-\d{5}-\d{4}$/;
+    return regexContato.test(contato);
+}
+
 const updateById = async (req, res) => {
     try {
         const {nome, email, contato} = req.body;
-        if(!nome || !email){
-            return res.status(400).json({msg: "Campos nome e email não foram definidos"});
-        }
-
-        if(nome === null || email === null){
+        
+        if(nome === "" || email === "" || contato === ""){
             return res.status(400).json({msg: "Preencha todos os campos"});
         }
 
@@ -18,10 +26,15 @@ const updateById = async (req, res) => {
                 id: { [Op.not]: req.params.id}
             } 
         });
-        if(emailExists){
-            return res.status(409).json({msg: "Já existe um usuário com este e-mail, insira outro"});
+
+        if(!isValidEmail(email)) {
+            return res.status(400).json({msg: "Insira um email válido"});
         }
 
+        // Verifica se o contato é válido
+        if(!isValidContato(contato)) {
+            return res.status(400).json({msg: "Insira um contato válido"});
+        }
 
         const response = await userModel.findOne({
             where: {
