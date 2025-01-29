@@ -71,7 +71,13 @@ function Home() {
         <div>
             <div className='header'>
                 <Link to="/addUser"><button>Adicionar usuários</button></Link>
-                <button onClick={() => showDeleteAllConfirmation()}>Excluir todos os usuários</button>
+                <button 
+                    onClick={() => showDeleteAllConfirmation()} 
+                    disabled={users.length === 0} 
+                    className={users.length === 0 ? 'disabled-button' : ''}
+                >
+                    Excluir todos os usuários
+                </button>
             </div>
             
             <table className='body'>

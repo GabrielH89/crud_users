@@ -115,3 +115,7 @@ body {
   background-color: #8B0000;
 }
 
+.disabled-button {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
