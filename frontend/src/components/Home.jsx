@@ -10,10 +10,12 @@ function Home() {
     const [showConfirmation, setShowConfirmation] = useState(false);
     const [deleteAllConfirmation, setDeleteAllConfirmation] = useState(false);
 
+    const API_URL = import.meta.env.VITE_API_URL;
+
     useEffect(() => {
         const getUsers = async () => {
             try {
-                const response = await axios.get("http://localhost:3800/users");
+                const response = await axios.get(`${API_URL}/users`);
                 console.log(response.data.msg);
                 setUsers(response.data.msg);
             } catch (err) {
@@ -25,7 +27,7 @@ function Home() {
 
     const deleteUser = async (id) => {
         try {
-            await axios.delete(`http://localhost:3800/users/${id}`);
+            await axios.delete(`${API_URL}/users/${id}`);
             setUserToDelete(null);
             setShowConfirmation(false); // Fecha o modal após a exclusão
             // Atualiza o estado local após a exclusão
@@ -37,7 +39,7 @@ function Home() {
 
     const deleteAllUsers = async () => {
         try {
-            await axios.delete("http://localhost:3800/users");
+            await axios.delete(`${API_URL}/users`);
             setUserToDelete(null);
             setShowConfirmation(false);
             setUsers([]);

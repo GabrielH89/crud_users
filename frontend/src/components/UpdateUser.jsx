@@ -10,14 +10,17 @@ function UpdateUser() {
   const [contato, setContato] = useState("");
   const navigate = useNavigate();
   const {id} = useParams();
+  const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
       getUserById();
   },[]);
+
+
   
   const getUserById = async () => {
     try {
-      const response = await axios.get(`http://localhost:3800/users/${id}`);
+      const response = await axios.get(`${API_URL}/users/${id}`);
       const userData = response.data.msg; 
       console.log(userData);
       setNome(userData.nome);
@@ -46,7 +49,7 @@ function UpdateUser() {
           alert("Insira um contato válido");
         } else {
           // Use a URL correta com o ID do usuário para a atualização
-          const url = `http://localhost:3800/users/${id}`;
+          const url = `${API_URL}/users/${id}`;
           
           const response = await axios.put(url, formData, {
             headers: {

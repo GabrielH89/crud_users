@@ -9,6 +9,7 @@ function AddUser() {
   const [email, setEmail] = useState("");
   const [contato, setContato] = useState("");
   const navigate = useNavigate(); 
+  const API_URL = import.meta.env.VITE_API_URL;
   
   const adicionarUser = async (e) => {
     e.preventDefault();
@@ -26,7 +27,7 @@ function AddUser() {
           }else if(!regexContato.test(contato)){
               alert("Insira um contato válido");
           }else{
-              await axios.post("http://localhost:3800/users", formData, {
+              await axios.post(`${API_URL}/users`, formData, {
                   headers: {
                   "Content-Type": "application/json"
                   }
